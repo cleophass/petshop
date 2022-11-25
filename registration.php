@@ -12,7 +12,7 @@ ini_set('display_errors', '1');
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "test";
+$db = "DATAPETS";
 $connexion = mysqli_connect($host, $user, $password, $db);
 
 if (!$connexion) {
@@ -29,10 +29,8 @@ if (!$connexion) {
     </h1>
     <form action="registration.php" method="post" style="display: flex; flex-direction: column; width: 30%">
         <input type="text" name="name" placeholder="Name">
-        <input type="text" name="surname" placeholder="Surname">
-        <input type="text" name="age" placeholder="Age">
-        <input type="text" name="sexe" placeholder="Sexe">
         <input type="text" name="password" placeholder="Password">
+        <input type="text" name="email" placeholder="Email">
 
         <input type="submit" name="submit" value="Register">
     </form>
