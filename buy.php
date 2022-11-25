@@ -12,15 +12,8 @@
 <?php
 require_once 'db.php';
 
-
 ini_set('display_errors', '1');
 session_start();
-echo session_id();
-
-// set session variables
-$_SESSION["name"] = "john";
-
-
 ?>
 
 <body>
@@ -52,7 +45,8 @@ $_SESSION["name"] = "john";
     if (isset($_POST['buy'])) {
         // fetch data of the connected user
         $name = $_SESSION['name'];
-        $query = "SELECT * FROM account WHERE name = '$name'";
+        $mail = $_SESSION['mail'];
+        $query = "SELECT * FROM account WHERE name = '$name' and mail = '$mail'";
         $result = mysqli_query($connexion, $query);
         // check balance of user and compare it to the price of the animal
         $row = mysqli_fetch_assoc($result);
