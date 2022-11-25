@@ -9,10 +9,8 @@
 <body>
     <h1>Hello world</h1>
     <!-- creer un bouton qui lie vers un autre fichier -->
-    <a href="test-con.php">lien vers test co</a>
-    <a href="registration.php">lien vers reg</a>
-    <!-- a href -->
-    <a href="connection.php">connection</a>
+    <a href="login.php">Login</a>
+    <a href="registration.php">Register</a>
 
 
     
