@@ -10,7 +10,7 @@
 </head>
 
 <?php
-require_once 'connexion.php';
+require_once 'db.php';
 
 
 ini_set('display_errors', '1');
