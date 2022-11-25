@@ -13,7 +13,7 @@ ini_set('display_errors', '1');
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "test";
+$db = "datapets";
 $connexion = mysqli_connect($host, $user, $password, $db);
 
 if (!$connexion) {
@@ -27,24 +27,23 @@ if (!$connexion) {
 <body>
     <h1>Login</h1>
     <form action="login.php" method="post" style="display: flex; flex-direction: column; width: 30%">
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="surname" placeholder="Surname">
+        <input type="text" name="mail" placeholder="eMail">
         <input type="text" name="password" placeholder="Password">
 
         <input type="submit" name="submit" value="Login">
     </form>
     <?php
     if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $surname = $_POST['surname'];
+        $mail = $_POST['mail'];
         $password = md5($_POST['password']);
 
-        $query = "SELECT * FROM student WHERE name = '$name'
-            AND surname = '$surname' AND password = '$password'";
+        $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
+            
         $result = mysqli_query($connexion, $query);
         if (mysqli_num_rows($result) > 0) {
-            echo "You have been logged in";
-            echo "mister " . $name . " " . $surname;
+            
+            // redirect to another page
+            header("Location: index.php");
         } else {
             echo "Error you have not been logged in";
         }
