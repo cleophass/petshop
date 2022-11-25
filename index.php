@@ -10,6 +10,8 @@
     <h1>Hello world</h1>
     <!-- creer un bouton qui lie vers un autre fichier -->
     <a href="test-con.php">lien vers caca</a>
+    <a href="registration.php">lien vers reg</a>
+
 
     
 </body>
