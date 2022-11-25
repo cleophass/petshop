@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="login.css">
     <title>Document</title>
 </head>
 
@@ -41,6 +43,11 @@ if (!$connexion) {
             
         $result = mysqli_query($connexion, $query);
         if (mysqli_num_rows($result) > 0) {
+            // session start
+            session_start();
+            $_SESSION['mail'] = $mail;
+            $_SESSION['name'] = $name;
+
             
             // redirect to another page
             header("Location: index.php");
