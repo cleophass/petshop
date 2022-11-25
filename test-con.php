@@ -16,7 +16,7 @@
     $host = "localhost";
     $user = "root";
     $password = "";
-    $db = "pet's_database";
+    $db = "DATAPETS";
     $connexion = mysqli_connect($host, $user, $password, $db);
 
     if (!$connexion) {
