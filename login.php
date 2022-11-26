@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/connection.css">
     <title>Document</title>
 </head>
 
@@ -15,14 +15,38 @@ require_once 'db.php';
 ?>
 
 <body>
-    <h1>Login</h1>
-    <form action="login.php" method="post" style="display: flex; flex-direction: column; width: 30%">
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="mail" placeholder="eMail">
-        <input type="text" name="password" placeholder="Password">
+    
+<div class="container">
+<div class="fixed">
+        <h2 class="q">Connection to A.P.UPPIES</h2>
 
-        <input type="submit" name="submit" value="Login">
+    <form class="bonus" action="login.php" method="post" style="display: flex; flex-direction: column; width: 30%;">
+    <div  class="form_group">
+            
+            
+        <input  class ="input" type="text" name="mail" placeholder="eMail">
+    </div>
+    <div  class="form_group">
+    <input class="input" type="text" name="name" placeholder="Name">
+    </div>
+    <div class="form_group">
+    <input class ="input" type="text" name="password" placeholder="Password">
+    </div>
+        
+        
+
+        
     </form>
+    <input class ="border moved2 unset" type="submit" name="submit" value="Login">
+
+<!--     
+    <a class="border moved2" name="submit" value="Login"  href="login.php">Login</a> -->
+<div class="line">
+        <h2 class="customer">New customer ?</h2>
+        <a class ="border moved" href="registration.php">Register</a>
+</div>
+
+    
     <?php
     if (isset($_POST['submit'])) {
         $mail = $_POST['mail'];
@@ -43,7 +67,6 @@ require_once 'db.php';
         }
     }
     ?>
-    <a href="index.html">BAKHOME</a>
 </body>
 
 </html>

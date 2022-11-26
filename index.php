@@ -15,7 +15,7 @@
     <a href="test-con.php">lien vers test co</a>
     <a href="registration.php">lien vers reg</a>
     <!-- a href -->
-    <a href="connection.php">connection</a>
+    <a href="login.php">connection</a>
 
     <a href="buy.php">lien vers buy</a>
 

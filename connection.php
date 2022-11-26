@@ -6,41 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- stylesheet login.css-->
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/connection.css">
 </head>
 <body>
-<div class="background">
-        <!-- une div pour mettre le background -->
-        <div class="overlay">
-
+<div class="container">
+<div class="fixed">
+        <h2 class="q">Connection to A.P.UPPIES</h2>
+    <form role="form">
+        <div  class="form_group">
+            <input class="input" type="text" id="fname" placeholder="First Name" required>
         </div>
-    </div>
-<!-- 
-    <div class="mid">
-        <p>connection to APUPPIES</p>
-        <h2>Ready to discover</h2>  
-        <div class="button">
-            <div class="popup" id="simple" onclick="myFunction()">NEED INFORMATION ?
-                <span class="popuptext" id="myPopup">Use the navigation bar to discover the different parts of the site</span>
-            </div>
-            <a class ="border" href="AboutMe.html">Learn more</a>
+        <div  class="form_group">
+            <input class="input" type="text" id="fname" placeholder="First Name" required>
         </div>
-    </div> -->
-
-
-
-
-
-
-
-
-    <h1 class="title">connection to APUPPIES</h1>
-    <!-- creer un bouton qui lie vers un autre fichier -->
-<div class = "centerbutton">
-
-    <a class="button" href="login.php">Login</a>
-    <a class="button" href="registration.php">Register</a>
-
+        <div class="form_group">
+            <input class="input" type="text" id="lname" placeholder="Last Name" required>
+        </div>
+        
+    </form>
+</div>
+    <a class="border moved2" href="login.php">Login</a>
+<div class="line">
+        <h2 class="customer">New customer ?</h2>
+        <a class ="border moved" href="registration.php">Register</a>
 </div>
 
 
