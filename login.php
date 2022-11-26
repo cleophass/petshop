@@ -10,63 +10,61 @@
     <title>Document</title>
 </head>
 
-<?php
-require_once 'db.php';
-?>
+<?php require_once 'db.php'; ?>
 
 <body>
-    
-<div class="container">
-<div class="fixed">
-        <h2 class="q">Connection to A.P.UPPIES</h2>
 
-    <form class="bonus" action="login.php" method="post" style="display: flex; flex-direction: column; width: 30%;">
-    <div  class="form_group">
-            
-            
-        <input  class ="input" type="text" name="mail" placeholder="eMail">
-    </div>
-    <div  class="form_group">
-    <input class="input" type="text" name="name" placeholder="Name">
-    </div>
-    <div class="form_group">
-    <input class ="input" type="text" name="password" placeholder="Password">
-    </div>
-        
-        
+    <div class="container">
+        <div class="fixed">
+            <h2 class="q">Connection to A.P.UPPIES</h2>
 
-        
-    </form>
-    <input class ="border moved2 unset" type="submit" name="submit" value="Login">
+            <form class="bonus" action="login.php" method="post" style="
+            display: flex;
+            flex-direction: column;
+            width: 30%;">
+                <div class="form_group">
 
-<!--     
-    <a class="border moved2" name="submit" value="Login"  href="login.php">Login</a> -->
-<div class="line">
-        <h2 class="customer">New customer ?</h2>
-        <a class ="border moved" href="registration.php">Register</a>
-</div>
 
-    
-    <?php
-    if (isset($_POST['submit'])) {
-        $mail = $_POST['mail'];
-        $password = md5($_POST['password']);
+                    <input class="input" type="text" name="mail" placeholder="eMail">
+                </div>
+                <div class="form_group">
+                    <input class="input" type="text" name="name" placeholder="Name">
+                </div>
+                <div class="form_group">
+                    <input class="input" type="text" name="password" placeholder="Password">
+                </div>
 
-        $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
 
-        $result = mysqli_query($connexion, $query);
-        if (mysqli_num_rows($result) > 0) {
-            $_SESSION['mail'] = $mail;
-            $_SESSION['name'] = $_POST['name'];
-            echo session_id();
 
-            // redirect to another page
-            // header("Location: index.php");
-        } else {
-            echo "Error you have not been logged in";
-        }
-    }
-    ?>
+                <input class="border moved2 unset" type="submit" name="submit" value="Login">
+            </form>
+
+            <div class="line">
+                <h2 class="customer">New customer ?</h2>
+                <a class="border moved" href="registration.php">Register</a>
+            </div>
+
+
+            <?php
+            if (isset($_POST['submit'])) {
+                $mail = $_POST['mail'];
+                $password = md5($_POST['password']);
+
+                $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
+
+                $result = mysqli_query($connexion, $query);
+                if (mysqli_num_rows($result) > 0) {
+                    $_SESSION['mail'] = $mail;
+                    $_SESSION['name'] = $_POST['name'];
+                    echo session_id();
+
+                    // redirect to another page
+                    // header("Location: index.php");
+                } else {
+                    echo "Error you have not been logged in";
+                }
+            }
+            ?>
 </body>
 
 </html>
