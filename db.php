@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -22,9 +23,10 @@
     if (!$connexion) {
         die("Connection failed: " . mysqli_connect_error());
     } else {
-        echo "Connected successfully";
+        echo "Connected successfully to database<br>";
     }
-
+    session_start();
+    echo "Connected successfully to session: " . session_id();
     ?>
 </body>
 
