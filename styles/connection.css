@@ -43,6 +43,12 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
+}
+
+.wid{
+    
+    width: 70%;
 }
 
 .form_group {
@@ -110,9 +116,11 @@
 	justify-content: center;
 
 	scale: 60%;
+    
+    cursor: pointer;
 }
 
-a.border:hover {
+.border:hover {
 	/*hover button*/
 	color: rgb(109, 109, 109);
 	/* underline */

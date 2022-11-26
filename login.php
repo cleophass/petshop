@@ -15,7 +15,7 @@
 <body>
 
     <div class="container">
-        <div class="fixed">
+        <div class="fixed wid">
             <h2 class="q">Connection to A.P.UPPIES</h2>
 
             <form class="bonus" action="login.php" method="post" style="
@@ -43,7 +43,8 @@
                 <h2 class="customer">New customer ?</h2>
                 <a class="border moved" href="registration.php">Register</a>
             </div>
-
+        </div>
+    </div>
 
             <?php
             if (isset($_POST['submit'])) {

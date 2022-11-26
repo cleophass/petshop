@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/connection.css">
 
     <title>Document</title>
 </head>
@@ -28,6 +29,44 @@ if (!$connexion) {
 ?>
 
 <body>
+    
+<div class="container">
+        <div class="fixed wid">
+            <h2 class="q">Register</h2>
+
+            <form class="bonus" action="registration.php" method="post" style="display: flex; flex-direction: column; width: 30%">
+                <div class="form_group">
+
+
+                    <input class="input" type="text" name="mail" placeholder="eMail">
+                </div>
+                <div class="form_group">
+                    <input class="input" type="text" name="name" placeholder="Name">
+                </div>
+                <div class="form_group">
+                    <input class="input" type="text" name="password" placeholder="Password">
+                </div>
+
+
+
+                <input class="border moved2 unset" type="submit" name="submit" value="Register">
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
     <h1>
         Register
     </h1>
@@ -39,7 +78,7 @@ if (!$connexion) {
 
 
         <input type="submit" name="submit" value="Register">
-    </form>
+    </form> -->
     <?php
     if (isset($_POST['submit'])) {
         $name = $_POST['name'];
