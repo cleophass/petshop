@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h2>Connexion to database state: </h2>
+    <!-- <h2>Connexion to database state: </h2> -->
 
     <?php
     ini_set('display_errors', '1');
@@ -22,11 +22,12 @@
 
     if (!$connexion) {
         die("Connection failed: " . mysqli_connect_error());
-    } else {
-        echo "Connected successfully to database<br>";
     }
+    // else {
+    // echo "Connected successfully to database<br>";
+    // }
     session_start();
-    echo "Connected successfully to session: " . session_id();
+    // echo "Connected successfully to session: " . session_id();
     ?>
 </body>
 
