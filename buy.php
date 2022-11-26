@@ -28,7 +28,7 @@ ini_set('display_errors', '1');
 
     </animal>
 
-    <form action="buy.php" method="post" style="display: flex; flex-direction: column; width: 30%">
+    <form method="post" style="display: flex; flex-direction: column; width: 30%">
         <input type="submit" name="buy" value="BUY">
     </form>
 
@@ -49,7 +49,6 @@ ini_set('display_errors', '1');
         // check balance of user and compare it to the price of the animal
         $row = mysqli_fetch_assoc($result);
         $balance = $row['balance'];
-        echo $balance;
         $price = 1000;
         if ($balance >= $price) {
             // if balance is enough, remove the price of the animal from the balance
@@ -57,12 +56,48 @@ ini_set('display_errors', '1');
             $query = "UPDATE account SET balance = '$newBalance' WHERE name = '$name'";
             $result = mysqli_query($connexion, $query);
             if ($result) {
-                echo "You have bought the animal";
+                header("Refresh:0");
             } else {
                 echo "Error you have not bought the animal";
             }
         } else {
-            echo "You don't have enough money to buy this animal";
+            echo "<br>You don't have enough money to buy this animal";
+        }
+    }
+    ?>
+
+    <h1>Wallet</h1>
+    <!-- fetch balance from table account -->
+    <?php
+    $name = $_SESSION['name'];
+    $mail = $_SESSION['mail'];
+    $query = "SELECT * FROM account WHERE name = '$name' and mail = '$mail'";
+    $result = mysqli_query($connexion, $query);
+    $row = mysqli_fetch_assoc($result);
+    $balance = $row['balance'];
+    echo "<h3>Your balance is: </h3>" . $balance . "$";
+    ?>
+
+    <form action="buy.php" method="post" style="display: flex; flex-direction: column; width: 30%">
+        <input type="text" name="amount" placeholder="Amount">
+        <input type="submit" name="refill" value="Refill wallet">
+    </form>
+
+    <?php
+    if (isset($_POST['refill'])) {
+        $amount = $_POST['amount'];
+        if ($amount > 0) {
+            $newBalance = $balance + $amount;
+            $query = "UPDATE account SET balance = '$newBalance' WHERE name = '$name' and mail = '$mail'";
+            $result = mysqli_query($connexion, $query);
+            if ($result) {
+                echo "You have refilled your wallet";
+                header("Refresh:0");
+            } else {
+                echo "Error you have not refilled your wallet";
+            }
+        } else {
+            echo "Please enter a valid amount";
         }
     }
     ?>
