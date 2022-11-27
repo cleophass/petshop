@@ -16,30 +16,52 @@ ini_set('display_errors', '1');
 
 <body>
     <h1>Buy a new animal</h1>
-    <!-- Check if user is connected -->
-    <animal>
-        <h3>Name: Nendo</h3>
-        <h3>Species: Dog</h3>
-        <h3>Race: Akita</h3>
-        <h3>Weight: 30kg</h3>
-        <h3>Age: 2 years</h3>
-        <h3>Price: 1000$</h3>
-        <h3>Sexe: male</h3>
-
-    </animal>
-
-    <form method="post" style="display: flex; flex-direction: column; width: 30%">
-        <input type="submit" name="buy" value="BUY">
-    </form>
-
+    <?php
+    $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
+    $result = mysqli_query($connexion, $sql);
+    $animal = mysqli_fetch_assoc($result);
+    mysqli_free_result($result);
+    ?>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Species</th>
+            <th>Race</th>
+            <th>Weight</th>
+            <th>Age</th>
+            <th>Price</th>
+            <th>Sexe</th>
+        </tr>
+        <tr>
+            <td><?php echo $animal['name'] ?></td>
+            <td><?php echo $animal['species'] ?></td>
+            <td><?php echo $animal['race'] ?></td>
+            <td><?php echo $animal['weight'] ?></td>
+            <td><?php echo $animal['age'] ?></td>
+            <td><?php echo $animal['price'] ?></td>
+            <td><?php echo $animal['sexe'] ?></td>
+        </tr>
+    </table>
     <?php
     if (!isset($_SESSION['name'])) {
         echo "
-        <a href='connection.php'>Please connect to your website to purchase a pet 🤭</a>
-        ";
+    <a href='connection.php'>Please connect to your website to purchase a pet 🤭</a>
+    ";
     } else {
         echo "Welcome " . $_SESSION["name"];
     }
+    if ($_SESSION['bought']) {
+        echo "<br>Congrats! You have bought " . $animal['name'] . ' 🎉';
+    } else {
+        echo
+        "<form method=\"post\" style=\"display: flex; flex-direction: column; width: 30%\">
+        <input type=\"submit\" name=\"buy\" value=\"BUY\">
+    </form>";
+    }
+    ?>
+
+
+    <?php
     if (isset($_POST['buy'])) {
         // fetch data of the connected user
         $name = $_SESSION['name'];
@@ -49,13 +71,14 @@ ini_set('display_errors', '1');
         // check balance of user and compare it to the price of the animal
         $row = mysqli_fetch_assoc($result);
         $balance = $row['balance'];
-        $price = 1000;
+        $price = $animal['price'];
         if ($balance >= $price) {
             // if balance is enough, remove the price of the animal from the balance
             $newBalance = $balance - $price;
             $query = "UPDATE account SET balance = '$newBalance' WHERE name = '$name'";
             $result = mysqli_query($connexion, $query);
             if ($result) {
+                $_SESSION['bought'] = true;
                 header("Refresh:0");
             } else {
                 echo "Error you have not bought the animal";
