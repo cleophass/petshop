@@ -32,6 +32,7 @@ ini_set('display_errors', '1');
             <th>Age</th>
             <th>Price</th>
             <th>Sexe</th>
+            <th>Buy</th>
         </tr>
         <?php foreach ($animals as $animal) : ?>
             <tr>
@@ -42,10 +43,20 @@ ini_set('display_errors', '1');
                 <td><?php echo $animal['age'] ?></td>
                 <td><?php echo $animal['price'] ?></td>
                 <td><?php echo $animal['sexe'] ?></td>
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="<?php echo $animal['id'] ?>">
+                        <input type="submit" value="Buy" name="buy">
+                    </form>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
-
+    <?php
+    if (isset($_POST['buy'])) {
+        $_SESSION['petId'] = $_POST['id'];
+    }
+    ?>
     <a href="index.php">BAKHOME</a>
 </body>
 
