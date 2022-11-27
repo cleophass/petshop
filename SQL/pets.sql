@@ -28,13 +28,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `pets` (
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `species` varchar(50) DEFAULT NULL,
   `race` varchar(50) DEFAULT NULL,
   `weight` double DEFAULT NULL,
   `age` int(50) DEFAULT NULL,
   `price` int(50) DEFAULT NULL,
-  `sexe` varchar(50) DEFAULT NULL
+  `sexe` varchar(50) DEFAULT NULL,
+  primary key (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 

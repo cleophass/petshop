@@ -41,3 +41,4 @@ COMMIT;
 
 
 ALTER TABLE `account` CHANGE `balance` `balance` INT(50) NULL DEFAULT '1000';
+ALTER TABLE `account` ADD PRIMARY KEY(`mail`);
