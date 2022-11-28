@@ -66,6 +66,7 @@ ini_set('display_errors', '1');
     if (isset($_POST['buy'])) {
         $_SESSION['petId'] = $_POST['id'];
         $_SESSION['bought'] = false;
+        echo "<script>location.href='buy.php'</script>";
     }
     ?>
     <a href="index.php">BAKHOME</a>

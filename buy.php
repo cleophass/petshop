@@ -134,6 +134,7 @@ ini_set('display_errors', '1');
         }
     }
     ?>
+    <a href="index.php">BAKHOME</a>
 </body>
 
 </html>
