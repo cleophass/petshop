@@ -13,28 +13,17 @@
     <title>Document</title>
 </head>
 <?php
-ini_set('display_errors', '1');
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "DATAPETS";
-$connexion = mysqli_connect($host, $user, $password, $db);
-
-if (!$connexion) {
-    die("Connection failed: " . mysqli_connect_error());
-} else {
-    echo "Connected successfully";
-}
-
+require_once 'db.php';
 ?>
 
 <body>
-    
-<div class="container">
+
+    <div class="container">
         <div class="fixed wid">
             <h2 class="q">Register</h2>
 
-            <form class="bonus" action="registration.php" method="post" style="display: flex; flex-direction: column; width: 30%">
+            <form class="bonus" action="registration.php
+            " method="post" style="display: flex; flex-direction: column; width: 30%">
                 <div class="form_group">
 
 
@@ -66,7 +55,7 @@ if (!$connexion) {
 
 
 
-<!-- 
+        <!-- 
     <h1>
         Register
     </h1>
@@ -79,23 +68,23 @@ if (!$connexion) {
 
         <input type="submit" name="submit" value="Register">
     </form> -->
-    <?php
-    if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $mail = $_POST['mail'];
-        $password = md5($_POST['password']);
+        <?php
+        if (isset($_POST['submit'])) {
+            $name = $_POST['name'];
+            $mail = $_POST['mail'];
+            $password = md5($_POST['password']);
 
 
-        $query = "INSERT INTO account (name, mail, password) VALUES
+            $query = "INSERT INTO account (name, mail, password) VALUES
         ('$name', '$mail', '$password')";
-        $result = mysqli_query($connexion, $query);
-        if ($result) {
-            echo "You have been registered";
-        } else {
-            echo "Error you have not been registered";
+            $result = mysqli_query($connexion, $query);
+            if ($result) {
+                echo "You have been registered";
+            } else {
+                echo "Error you have not been registered";
+            }
         }
-    }
-    ?>
+        ?>
 </body>
 
 </html>

@@ -8,7 +8,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/nav.css">
-
     <link rel="stylesheet" href="styles/home.css">
 
 </head>
@@ -20,7 +19,6 @@ ini_set('display_errors', '1');
 
 <body>
     <div class="nav">
-        <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="interdit">
         <div class="space"></div>
 
         <ul id="item">
@@ -38,8 +36,25 @@ ini_set('display_errors', '1');
             <li><a href="buy.php">
                     <p class="p3">BUY</p>
                 </a></li>
-            <li><a href="login.php"><img src="assets/login.png
-            " alt="logo" height="100px" width="100px" class="image"></a></li>
+            <?php
+            if (isset($_GET['logout'])) {
+                unset($_SESSION); // unset and session data
+                session_unset();  // remove all session variables
+                session_destroy(); // destroy the session
+                header("Location: index.php");
+            }
+
+            if (isset($_SESSION['name'])) {
+                echo "
+                        <li><a href=\"?logout\"><img src=\"assets/logout.png
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\"></a></li>";
+            } else {
+                echo "
+                        <li><a href=\"login.php\"><img src=\"assets/login.png
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\"></a></li>";
+            }
+            ?>
+
         </ul>
     </div>
     <header>
