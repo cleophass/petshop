@@ -25,6 +25,7 @@ ini_set('display_errors', '1');
     <table>
         <tr>
             <th>Name</th>
+            <th>Picture</th>
             <th>Species</th>
             <th>Race</th>
             <th>Weight</th>
@@ -34,6 +35,15 @@ ini_set('display_errors', '1');
         </tr>
         <tr>
             <td><?php echo $animal['name'] ?></td>
+            <td>
+                <img src="<?php
+                            $api_url = 'https://dog.ceo/api/breeds/image/random';
+                            $json_data = file_get_contents($api_url);
+                            $response_data = json_decode($json_data);
+                            $user_data = $response_data->message;
+                            echo $user_data;
+                            ?>" alt="" width=" 100px">
+            </td>
             <td><?php echo $animal['species'] ?></td>
             <td><?php echo $animal['race'] ?></td>
             <td><?php echo $animal['weight'] ?></td>
