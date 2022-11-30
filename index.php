@@ -19,9 +19,7 @@ ini_set('display_errors', '1');
 
 <body>
     <div class="nav">
-    <div>
-        
-    </div>
+    
     
     <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
 
