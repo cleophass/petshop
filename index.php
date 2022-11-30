@@ -66,9 +66,11 @@ ini_set('display_errors', '1');
             <br>
             <button class="button"><a href="#animals">See products <em class="fas fa-box"></a></em></button>
         </section>
+    
+    
     </header>
     <?php
-    require 'animal.php';
+    require 'animals.php';
     ?>
 
 </body>
