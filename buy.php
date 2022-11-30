@@ -21,6 +21,9 @@ ini_set('display_errors', '1');
     $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
     $result = mysqli_query($connexion, $sql);
     $animal = mysqli_fetch_assoc($result);
+    if (!$animal) {
+        $animal = $_SESSION['animal'];
+    }
     mysqli_free_result($result);
     ?>
     <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
@@ -79,10 +82,10 @@ ini_set('display_errors', '1');
             $result = mysqli_query($connexion, $query);
             if ($result) {
                 $_SESSION['bought'] = true;
-                // todo
-                // $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
-                // $result = mysqli_query($connexion, $query);
+                $_SESSION['animal'] = $animal;
                 header("Refresh:0");
+                $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
+                $result = mysqli_query($connexion, $query);
             } else {
                 echo "Error you have not bought the animal";
             }
