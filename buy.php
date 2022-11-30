@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/cards.css">
     <title>Document</title>
 </head>
 
@@ -22,36 +23,25 @@ ini_set('display_errors', '1');
     $animal = mysqli_fetch_assoc($result);
     mysqli_free_result($result);
     ?>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Picture</th>
-            <th>Species</th>
-            <th>Race</th>
-            <th>Weight</th>
-            <th>Age</th>
-            <th>Price</th>
-            <th>Sexe</th>
-        </tr>
-        <tr>
-            <td><?php echo $animal['name'] ?></td>
-            <td>
-                <img src="<?php
-                            $api_url = 'https://dog.ceo/api/breeds/image/random';
-                            $json_data = file_get_contents($api_url);
-                            $response_data = json_decode($json_data);
-                            $user_data = $response_data->message;
-                            echo $user_data;
-                            ?>" alt="" width=" 100px">
-            </td>
-            <td><?php echo $animal['species'] ?></td>
-            <td><?php echo $animal['race'] ?></td>
-            <td><?php echo $animal['weight'] ?></td>
-            <td><?php echo $animal['age'] ?></td>
-            <td><?php echo $animal['price'] ?></td>
-            <td><?php echo $animal['sexe'] ?></td>
-        </tr>
-    </table>
+    <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
+        <div class="card__info-hover">
+            <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
+            <div class="card__clock-info">
+                <span class="card__time" viewBox="0 0 24 24"><?php echo $animal['weight'] ?> kg</span>
+                <span class="card__time"><?php echo $animal['race'] ?></span>
+            </div>
+        </div>
+        <div class="card__img"></div>
+        <div class="card_link">
+            <div class="card__img--hover"></div>
+        </div>
+        <div class="card__info">
+            <span class="card__category"><?php echo $animal['species'] ?></span>
+            <h3 class="card__title"><?php echo $animal['name'] ?></h3>
+            <span class="card__by"><?php echo $animal['price'] ?>$ <a href="#" class="
+                    card__author" title="author"><?php echo $animal['sexe'] ?></a></span>
+        </div>
+    </article>
     <?php
     if (!isset($_SESSION['name'])) {
         echo "
@@ -89,6 +79,9 @@ ini_set('display_errors', '1');
             $result = mysqli_query($connexion, $query);
             if ($result) {
                 $_SESSION['bought'] = true;
+                // todo
+                // $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
+                // $result = mysqli_query($connexion, $query);
                 header("Refresh:0");
             } else {
                 echo "Error you have not bought the animal";
