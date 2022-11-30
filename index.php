@@ -18,52 +18,11 @@ ini_set('display_errors', '1');
 ?>
 
 <body>
-    <div class="nav">
-    
-    
-    <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
+    <?php
+    require 'navbar.php';
+    ?>
 
-        <div class="space"></div>   
-
-
-        <ul id="item">
-            <li><a href="index.php">
-                    <p class="p1">Home Page </p>
-                </a></li>
-            <li><a href="AboutMe.html">
-                    <p class="p2">About Me </i>
-                </a></li>
-            <li><a href="db.php">
-                    <p class="p5">test
-                        <col>
-                    </p>
-                </a></li>
-            <li><a href="buy.php">
-                    <p class="p3">BUY</p>
-                </a></li>
-            <?php
-            if (isset($_GET['logout'])) {
-                unset($_SESSION); // unset and session data
-                session_unset();  // remove all session variables
-                session_destroy(); // destroy the session
-                header("Location: index.php");
-            }
-
-            if (isset($_SESSION['name'])) {
-                echo "
-                        <li><a  href=\"?logout\"><img src=\"assets/logout.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
-            } else {
-                echo "
-                        <li><a href=\"login.php\"><img \"image\" src=\"assets/login.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
-            }
-            ?>
-
-        </ul>
-    </div>
     <div class="header">
-
         <section id="header">
             <h4>Let's find the puppy of your dream !</h4>
             <h2>Super value deals</h2>
@@ -72,15 +31,13 @@ ini_set('display_errors', '1');
             <br>
             <button class="button"><a href="#animal_part">See products <em class="fas fa-box"></a></button>
         </section>
-    
-
     </div>
 
 
     <div id="animal_part">
-    <?php
-    require 'animals.php';
-    ?>
+        <?php
+        require 'animals.php';
+        ?>
     </div>
 
 </body>
