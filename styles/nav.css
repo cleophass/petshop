@@ -56,7 +56,7 @@
 #item .icon i:hover{
     color:#33ffff;
     cursor: pointer;
-    
+
     
 
 }
@@ -76,4 +76,16 @@
     
     
 
+}
+
+
+.logo{
+    /* mettre l'image en rond */
+    scale:80%;
+    filter: invert(100%);
+}
+
+.logo:hover{
+    cursor:not-allowed;
+    
 }
