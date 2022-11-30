@@ -42,7 +42,6 @@
     color:#33ffff;
     cursor: pointer;
     border-bottom: 2px solid #33ffff;
-    padding-bottom: 2px;
 
 }
 
@@ -57,6 +56,8 @@
 #item .icon i:hover{
     color:#33ffff;
     cursor: pointer;
+    
+    
 
 }
 
@@ -72,5 +73,7 @@
 .image:hover{
     /* changer la couleur de l'image */
     filter: invert(100%);
+    
+    
 
 }
