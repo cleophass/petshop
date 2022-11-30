@@ -19,43 +19,46 @@ ini_set('display_errors', '1');
 
 
 <body>
-    
-<select name="species" id="species_id">
-<option value="all">all</option>
-<?php
-
-$sql='SELECT DISTINCT species FROM pets ';
-$list = mysqli_query($connexion, $sql);
-
-while ($data = mysqli_fetch_array($list))
-     {echo'<option value="'.$data['species'].'">'.$data['species'].'</option>';}
-?>
-</select>
+    <div class="container">
 
 
+        <select name="species" id="species_id">
+            <option value="all">all</option>
+            <?php
+
+            $sql = 'SELECT DISTINCT species FROM pets ';
+            $list = mysqli_query($connexion, $sql);
+
+            while ($data = mysqli_fetch_array($list)) {
+                echo '<option value="' . $data['species'] . '">' . $data['species'] . '</option>';
+            }
+            ?>
+        </select>
 
 
-    
- 
-    <?php
-    
-    // if ($_GET['species_id'] == 'all') {
-    //     $sql = 'SELECT * FROM pets';
-    // } else {
-    //     // else we display only the pets with the species_id
-    //     $sql = 'SELECT * FROM pets WHERE species = "' . $_GET['species_id'] . '"';
-    // }
-    
-    
-    $sql = 'SELECT * FROM pets';
-    $result = mysqli_query($connexion, $sql);
-    $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    mysqli_free_result($result);
-    mysqli_close($connexion);
-    ?>
 
-    
-    <!-- <table>
+
+
+
+        <?php
+
+        // if ($_GET['species_id'] == 'all') {
+        //     $sql = 'SELECT * FROM pets';
+        // } else {
+        //     // else we display only the pets with the species_id
+        //     $sql = 'SELECT * FROM pets WHERE species = "' . $_GET['species_id'] . '"';
+        // }
+
+
+        $sql = 'SELECT * FROM pets';
+        $result = mysqli_query($connexion, $sql);
+        $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_free_result($result);
+        mysqli_close($connexion);
+        ?>
+
+
+        <!-- <table>
         <tr>
             <th>Name</th>
             <th>Picture</th>
@@ -67,24 +70,24 @@ while ($data = mysqli_fetch_array($list))
             <th>Sexe</th>
             <th>Buy</th>
         </tr> -->
-        
-    
 
-        
+
+
+
 
         <?php foreach ($animals as $animal) : ?>
 
 
 
 
-            <article class="card card--1" style="background-image:url(<?php echo $animal['photo']?>">
+            <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
                 <div class="card__info-hover">
                     <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
-    
+
                     </svg>
                     <div class="card__clock-info">
                         <span class="card__time" viewBox="0 0 24 24"><?php echo $animal['weight'] ?> kg</span>
-                     
+
                         </svg><span class="card__time"><?php echo $animal['race'] ?></span>
                     </div>
 
@@ -119,17 +122,17 @@ while ($data = mysqli_fetch_array($list))
                     </td>
                 </tr> -->
         <?php endforeach; ?>
-    
 
-    <!-- </table> -->
-    <?php
-    if (isset($_POST['buy'])) {
-        $_SESSION['petId'] = $_POST['id'];
-        $_SESSION['bought'] = false;
-        echo "<script>location.href='buy.php'</script>";
-    }
-    ?>
-    
+
+        <!-- </table> -->
+        <?php
+        if (isset($_POST['buy'])) {
+            $_SESSION['petId'] = $_POST['id'];
+            $_SESSION['bought'] = false;
+            echo "<script>location.href='buy.php'</script>";
+        }
+        ?>
+</div>
 </body>
 
 </html>
