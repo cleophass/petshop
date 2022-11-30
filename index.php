@@ -62,21 +62,26 @@ ini_set('display_errors', '1');
 
         </ul>
     </div>
-    <header>
+    <div class="header">
+
         <section id="header">
-            <h4>New season collection</h4>
+            <h4>Let's find the puppy of your dream !</h4>
             <h2>Super value deals</h2>
             <h1>On all products !</h1>
-            <p><em>70% discount until the 2nd of june! *</em></p>
+            <p><em>delivery in less than 24 hours!*</em></p>
             <br>
-            <button class="button"><a href="#animals">See products <em class="fas fa-box"></a></em></button>
+            <button class="button"><a href="#animal_part">See products <em class="fas fa-box"></a></button>
         </section>
     
-    
-    </header>
+
+    </div>
+
+
+    <div id="animal_part">
     <?php
     require 'animals.php';
     ?>
+    </div>
 
 </body>
 
