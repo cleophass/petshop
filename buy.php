@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
+  
     <title>Document</title>
 </head>
+
+
+
 
 <?php
 require_once 'db.php';
@@ -16,6 +22,10 @@ ini_set('display_errors', '1');
 ?>
 
 <body>
+
+
+
+
     <h1>Buy a new animal</h1>
     <?php
     $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
@@ -54,6 +64,7 @@ ini_set('display_errors', '1');
         echo "Welcome " . $_SESSION["name"];
     }
     if ($_SESSION['bought']) {
+        
         echo "<br>Congrats! You have bought " . $animal['name'] . ' 🎉';
     } else {
         echo
@@ -81,11 +92,19 @@ ini_set('display_errors', '1');
             $query = "UPDATE account SET balance = '$newBalance' WHERE name = '$name'";
             $result = mysqli_query($connexion, $query);
             if ($result) {
+                require_once 'mail.php';
+        $mail = $_SESSION['mail'];
+        $name = $_SESSION['name'];
+        sendEmail($mail,$name);
+                
+                
                 $_SESSION['bought'] = true;
                 $_SESSION['animal'] = $animal;
-                header("Refresh:0");
+                // header("Refresh:0");
                 $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
                 $result = mysqli_query($connexion, $query);
+
+
             } else {
                 echo "Error you have not bought the animal";
             }
