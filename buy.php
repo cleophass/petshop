@@ -22,10 +22,14 @@ ini_set('display_errors', '1');
 ?>
 
 <body>
+<<<<<<< HEAD
 
 
 
 
+=======
+    <?php require 'navbar.php'; ?>
+>>>>>>> b865ade40ee9a5c0021e049b2711b8107145d377
     <h1>Buy a new animal</h1>
     <?php
     $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
@@ -76,7 +80,7 @@ ini_set('display_errors', '1');
 
 
     <?php
-    if (isset($_POST['buy'])) {
+    if (isset($_POST['buy']) && isset($_SESSION['name'])) {
         // fetch data of the connected user
         $name = $_SESSION['name'];
         $mail = $_SESSION['mail'];
@@ -117,22 +121,24 @@ ini_set('display_errors', '1');
     <h1>Wallet</h1>
     <!-- fetch balance from table account -->
     <?php
-    $name = $_SESSION['name'];
-    $mail = $_SESSION['mail'];
-    $query = "SELECT * FROM account WHERE name = '$name' and mail = '$mail'";
-    $result = mysqli_query($connexion, $query);
-    $row = mysqli_fetch_assoc($result);
-    $balance = $row['balance'];
-    echo "<h3>Your balance is: </h3>" . $balance . "$";
+    if (isset($_SESSION['name'])) {
+        $name = $_SESSION['name'];
+        $mail = $_SESSION['mail'];
+        $query = "SELECT * FROM account WHERE name = '$name' and mail = '$mail'";
+        $result = mysqli_query($connexion, $query);
+        $row = mysqli_fetch_assoc($result);
+        $balance = $row['balance'];
+        echo "<h3>Your balance is: </h3>" . $balance . "$";
+    }
     ?>
-
     <form action="buy.php" method="post" style="display: flex; flex-direction: column; width: 30%">
         <input type="text" name="amount" placeholder="Amount">
         <input type="submit" name="refill" value="Refill wallet">
     </form>
 
+
     <?php
-    if (isset($_POST['refill'])) {
+    if (isset($_POST['refill']) && isset($_SESSION['name'])) {
         $amount = $_POST['amount'];
         if ($amount > 0) {
             $newBalance = $balance + $amount;
@@ -149,7 +155,6 @@ ini_set('display_errors', '1');
         }
     }
     ?>
-    <a href="index.php">BAKHOME</a>
 </body>
 
 </html>
