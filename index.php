@@ -46,12 +46,12 @@ ini_set('display_errors', '1');
 
             if (isset($_SESSION['name'])) {
                 echo "
-                        <li><a href=\"?logout\"><img src=\"assets/logout.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\"></a></li>";
+                        <li><a  href=\"?logout\"><img src=\"assets/logout.png
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\" \class=\"image\"></a></li>";
             } else {
                 echo "
-                        <li><a href=\"login.php\"><img src=\"assets/login.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\"></a></li>";
+                        <li><a href=\"login.php\"><img \"image\" src=\"assets/login.png
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\" \class=\"image\"></a></li>";
             }
             ?>
 
@@ -67,11 +67,9 @@ ini_set('display_errors', '1');
             <button class="button"><a href="#animals">See products <em class="fas fa-box"></a></em></button>
         </section>
     </header>
-    <animals id="animals">
-        <?php
-        require 'animals.php';
-        ?>
-    </animals>
+    <?php
+    require 'animal.php';
+    ?>
 
 </body>
 
