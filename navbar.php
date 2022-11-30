@@ -11,22 +11,14 @@
 
 <body>
     <div class="nav">
-
-
         <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
-
         <div class="space"></div>
-
-
         <ul id="item">
             <li><a href="index.php">
                     <p class="p1">Home Page </p>
                 </a></li>
-            <li><a href="AboutMe.html">
+            <li><a href="#">
                     <p class="p2">About Me </i>
-                </a></li>
-            <li><a href="buy.php">
-                    <p class="p3">BUY</p>
                 </a></li>
             <?php
             if (isset($_GET['logout'])) {
