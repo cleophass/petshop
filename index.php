@@ -19,7 +19,14 @@ ini_set('display_errors', '1');
 
 <body>
     <div class="nav">
-        <div class="space"></div>
+    <div>
+        
+    </div>
+    
+    <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
+
+        <div class="space"></div>   
+
 
         <ul id="item">
             <li><a href="index.php">
