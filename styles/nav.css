@@ -63,12 +63,14 @@
 
 .image{
     /* changer la couleur de l'image */
-    filter: invert(100%);
+    
+    filter: hue-rotate(90deg);
+    
 
 }
 
 .image:hover{
     /* changer la couleur de l'image */
-    filter: hue-rotate(90deg);
+    filter: invert(100%);
 
 }

@@ -47,11 +47,11 @@ ini_set('display_errors', '1');
             if (isset($_SESSION['name'])) {
                 echo "
                         <li><a  href=\"?logout\"><img src=\"assets/logout.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\" \class=\"image\"></a></li>";
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
             } else {
                 echo "
                         <li><a href=\"login.php\"><img \"image\" src=\"assets/login.png
-                        \" alt=\"logo\" height=\"50px\" width=\"50px\" \class=\"image\"></a></li>";
+                        \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
             }
             ?>
 
