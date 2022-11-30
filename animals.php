@@ -15,6 +15,9 @@
 <?php
 require_once 'db.php';
 ini_set('display_errors', '1');
+if (isset($_POST['bought'])) {
+    $_SESSION['petId'] = null;
+}
 ?>
 
 
@@ -43,7 +46,7 @@ ini_set('display_errors', '1');
         ?>
 
         <?php foreach ($animals as $animal) : ?>
-            <a href="?buy">
+            <a href="?buy=<?php echo $animal['id']; ?>">
                 <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
                     <div class="card__info-hover">
                         <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
@@ -65,16 +68,15 @@ ini_set('display_errors', '1');
                     card__author" title="author"><?php echo $animal['sexe'] ?></a></span>
                     </div>
                 </article>
-                <?php
-                if (isset($_GET['buy'])) {
-                    $_SESSION['petId'] = $animal['id'];
-                    $_SESSION['bought'] = false;
-                    echo "<script>location.href='buy.php'</script>";
-                }
-                ?>
             </a>
-
         <?php endforeach; ?>
+        <?php
+        if (isset($_GET['buy'])) {
+            $_SESSION['petId'] = $_GET['buy'];
+            $_SESSION['bought'] = false;
+            echo "<script>location.href='buy.php'</script>";
+        }
+        ?>
     </div>
 </body>
 
