@@ -18,7 +18,7 @@
 
     use PHPMailer\PHPMailer\PHPMailer;
 
-    function sendEmail($to, $name)
+    function sendEmail($subject, $to, $name)
     {
         $mail = new PHPMailer();
         $mail->isSMTP();
@@ -28,11 +28,11 @@
         $mail->Port = "587";
         $mail->Username = "contact.apuppies@gmail.com";
         $mail->Password = "aemlybffsvoqdknh";
-        $mail->Subject = "Reset Password!";
+        $mail->Subject = $subject;
         $mail->setFrom('contact.apuppies@gmail.com');
         $mail->isHTML(true);
 
-        $mail->Body = "Congratulation" . $name . "you have just bought the new animal";
+        $mail->Body = "Congratulation " . $name . " !!<br>You just bought " . $_SESSION['animal']['name'] . " 🎉🎉🎉";
 
         $mail->addAddress($to);
 
