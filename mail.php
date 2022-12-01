@@ -10,46 +10,42 @@
 </head>
 
 <body>
-<!-- part for mail -->
-<?php
-ini_set('display_errors', '1');
-require 'includes/PHPMailer.php';
-require 'includes/SMTP.php';
-require 'includes/Exception.php';
+    <?php
+    ini_set('display_errors', '1');
+    require 'includes/PHPMailer.php';
+    require 'includes/SMTP.php';
+    require 'includes/Exception.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
 
-function sendEmail($to,$name){
-    
+    function sendEmail($to, $name)
+    {
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "tls";
+        $mail->Port = "587";
+        $mail->Username = "contact.apuppies@gmail.com";
+        $mail->Password = "aemlybffsvoqdknh";
+        $mail->Subject = "Reset Password!";
+        $mail->setFrom('contact.apuppies@gmail.com');
+        $mail->isHTML(true);
 
-    $mail = new PHPMailer();
-    $mail->isSMTP();
-    $mail->Host = "smtp.gmail.com";
-    $mail->SMTPAuth = true;
-    $mail->SMTPSecure = "tls";
-    $mail->Port = "587";
-    $mail->Username = "contact.apuppies@gmail.com";
-    $mail->Password = "aemlybffsvoqdknh";
-    $mail->Subject = "Reset Password!";
-    $mail->setFrom('contact.apuppies@gmail.com');
-    $mail->isHTML(true);
+        $mail->Body = "Congratulation" . $name . "you have just bought the new animal";
 
-    $mail->Body = "Congratulation".$name."you have just bought the new animal";
-
-    $mail->addAddress($to);
+        $mail->addAddress($to);
 
 
-    if ($mail->send()) {
-        echo "Email Sent..!";
-    } else {
-        echo "Message could not be sent. Mailer Error: ";
+        if ($mail->send()) {
+            echo "Email Sent..!";
+        } else {
+            echo "Message could not be sent. Mailer Error: ";
+        }
+
+        $mail->smtpClose();
     }
-
-    $mail->smtpClose();
-}
-
-
-?>
+    ?>
 
 </body>
 
