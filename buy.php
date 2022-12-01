@@ -22,14 +22,7 @@ ini_set('display_errors', '1');
 ?>
 
 <body>
-<<<<<<< HEAD
-
-
-
-
-=======
     <?php require 'navbar.php'; ?>
->>>>>>> b865ade40ee9a5c0021e049b2711b8107145d377
     <h1>Buy a new animal</h1>
     <?php
     $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
