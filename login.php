@@ -44,26 +44,26 @@
                 <a class="border moved" href="registration.php">Register</a>
             </div>
         </div>
+        <?php
+        if (isset($_POST['submit'])) {
+            $mail = $_POST['mail'];
+            $password = md5($_POST['password']);
+
+            $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
+
+            $result = mysqli_query($connexion, $query);
+            if (mysqli_num_rows($result) > 0) {
+                $_SESSION['mail'] = $mail;
+                $_SESSION['name'] = $_POST['name'];
+                echo session_id();
+                header("Location: index.php");
+            } else {
+                echo "Error you have not been logged in😕<br>You might try another email or password🤔";
+            }
+        }
+        ?>
     </div>
 
-    <?php
-    if (isset($_POST['submit'])) {
-        $mail = $_POST['mail'];
-        $password = md5($_POST['password']);
-
-        $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
-
-        $result = mysqli_query($connexion, $query);
-        if (mysqli_num_rows($result) > 0) {
-            $_SESSION['mail'] = $mail;
-            $_SESSION['name'] = $_POST['name'];
-            echo session_id();
-            header("Location: index.php");
-        } else {
-            echo "Error you have not been logged in";
-        }
-    }
-    ?>
 </body>
 
 </html>
