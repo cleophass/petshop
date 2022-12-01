@@ -38,7 +38,7 @@
 
 
         if ($mail->send()) {
-            echo "Email Sent..!";
+            echo "Check your mails 🤭❗<br>";
         } else {
             echo "Message could not be sent. Mailer Error: ";
         }
