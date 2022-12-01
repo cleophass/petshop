@@ -52,6 +52,7 @@ require_once 'db.php';
                 $result = mysqli_query($connexion, $query);
                 if ($result) {
                     $_SESSION['name'] = $name;
+                    $_SESSION['mail'] = $mail;
                     echo "You have been registered";
                     echo "<br>
                 <a href=\"index.php\">Go Home 🏡⬅️</a>";
@@ -59,6 +60,8 @@ require_once 'db.php';
                     echo "Error you have not been registered";
                 }
             }
+        } else {
+            echo "Please fill all to register";
         }
         ?>
     </div>
