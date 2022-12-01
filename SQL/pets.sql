@@ -36,7 +36,10 @@ CREATE TABLE `pets` (
   `age` int(50) DEFAULT NULL,
   `price` int(50) DEFAULT NULL,
   `sexe` varchar(50) DEFAULT NULL,
-  primary key (id)
+  `photo` varchar(200) DEFAULT NULL,
+  `owner` varchar(50) DEFAULT NULL,
+  primary key (id),
+  FOREIGN KEY(owner) REFERENCES account(mail)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
