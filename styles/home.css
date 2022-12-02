@@ -5,7 +5,8 @@ html {
 
 .header{
     /* mettre une image en fond */
-    height: 90vh;
+    /* position:fixed; */
+  
     padding-top: 80px;
     padding-left: 120px;
     flex-direction: column;
@@ -15,6 +16,7 @@ html {
     margin-left: -8px;
     margin-right: -8px;
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding-bottom: 90px;
 }
 .header h4{
     font-size: 3rem;

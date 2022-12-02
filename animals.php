@@ -8,7 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
+    
+    <link rel="stylesheet" href="styles/nav.css">
     <script src="./animals.js"></script>
+
 
 </head>
 
@@ -22,6 +25,35 @@ if (isset($_POST['bought'])) {
 
 
 <body>
+<div class="navanimal">
+        
+        
+        <ul id="anim">
+        <li><a href="">
+                    <p class="t1">All</p>
+            </a></li>
+            <li><a href="">
+                    <p class="t1">Dog</p>
+            </a></li>
+            <li><a href="">
+                    <p class="t1">Cat</i>
+            </a></li>
+            <li><a href="">
+                    <p class="t1">Monkey</p>
+            </a></li>
+            <li><a href="">
+                    <p class="t1">Tiger</i>
+            </a></li>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
     <div class="container">
 
         <select name="species" id="species_id">

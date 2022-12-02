@@ -2,12 +2,16 @@
 /* style de la nav bar */
 .nav{
     /* deplacer la marge a gauche */
+    margin-left: 10%; 
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(45, 44, 44);
+    /* background-color: rgb(45, 44, 44); */
+    /* background degradé */
+    background: linear-gradient(to bottom, rgb(55, 54, 54), rgb(0, 0, 0));
+
     margin-top: -8px;
     margin-left: -8px;
     margin-right: -8px;
@@ -177,3 +181,60 @@ ul,li{
   
 }
 
+/* nav animal */
+/* style de la nav bar */
+.navanimal{
+    /* deplacer la marge a gauche */
+    /* empecher la div de se déplacer */
+    /* position:fixed; */
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(125, 116, 250); */
+    /* faire un background degradé */
+    background: linear-gradient(to bottom, rgb(102, 167, 211), rgb(67, 113, 143));
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    max-height: 90vh;
+}
+
+.t1{
+    color: #fff;
+    font-size: 1.7rem;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    /* mettre en gras */
+    font-weight: bolder;
+    /* border: 2px solid #fff; */
+}
+
+.t1:hover{
+    color:#3a3a3a;
+    cursor: pointer;
+    
+    /* no padding */
+    padding: 0;
+    /* effet hover */
+    
+}
+
+
+#anim{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* prendre toute la div */
+    width: 100%;
+    /* ecarter les elements */
+    justify-content: space-around;
+}
+
+#anim li{
+    list-style: none;
+    padding-right: 50px;
+}
