@@ -34,8 +34,8 @@
 .p5 {
 	color: whitesmoke;
 	text-decoration: none;
-	font-size: 1rem;
-	text-transform: uppercase;
+	font-size: 1.5rem;
+	
 }
 
 .p1:hover,
@@ -74,7 +74,7 @@
 }
 
 .logo:hover {
-	cursor: not-allowed;
+	cursor: pointer;
 }
 
 ul,

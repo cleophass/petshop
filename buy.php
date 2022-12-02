@@ -54,6 +54,8 @@ ini_set('display_errors', '1');
     ";
     } else {
         echo "Welcome " . $_SESSION["name"];
+        $mail = $_SESSION['mail'];
+        $name = $_SESSION['name'];
     }
     if ($_SESSION['bought']) {
         echo "<br>Congrats! You have bought " . $animal['name'] . ' 🎉';
@@ -69,20 +71,15 @@ ini_set('display_errors', '1');
 
     <?php
     require_once 'mail.php';
-    $mail = $_SESSION['mail'];
-    $name = $_SESSION['name'];
     if (isset($_POST['buy']) && isset($_SESSION['name'])) {
-        // fetch data of the connected user
         $name = $_SESSION['name'];
         $mail = $_SESSION['mail'];
         $query = "SELECT * FROM account WHERE name = '$name' and mail = '$mail'";
         $result = mysqli_query($connexion, $query);
-        // check balance of user and compare it to the price of the animal
         $row = mysqli_fetch_assoc($result);
         $balance = $row['balance'];
         $price = $animal['price'];
         if ($balance >= $price) {
-            // if balance is enough, remove the price of the animal from the balance
             $newBalance = $balance - $price;
             $query = "UPDATE account SET balance = '$newBalance' WHERE name = '$name'";
             $result = mysqli_query($connexion, $query);
@@ -90,10 +87,9 @@ ini_set('display_errors', '1');
                 $_SESSION['bought'] = true;
                 $_SESSION['animal'] = $animal;
                 sendEmail("Congrats !", $mail, $name);
-                // add an owner to the pet
                 $query = "UPDATE pets SET owner = '$mail' WHERE id = " . $_SESSION['petId'];
                 $result = mysqli_query($connexion, $query);
-                // header("Refresh:0");
+                header("Refresh:0");
             } else {
                 echo "Error you have not bought the animal";
             }

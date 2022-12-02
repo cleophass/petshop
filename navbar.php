@@ -11,14 +11,22 @@
 
 <body>
     <div class="nav">
-        <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
+        <ul>
+            <li><a href="index.php"><img src="assets/logo.png
+        " alt="logo" height="100px" width="100px" class="logo"></a></li>
+        </ul>
+
         <div class="space"></div>
         <ul id="item">
+            <li><a href="sellpet.php">
+                    <p class="p1">MySell</p>
+                </a></li>
+            <li><a href="mypets.php">
+                    <p class="p1">MyBalance</p>
+                </a></li>
+
             <li><a href="mypets.php">
                     <p class="p1">MyPets</p>
-                </a></li>
-            <li><a href="index.php">
-                    <p class="p1">Home Page </p>
                 </a></li>
             <li><a href="#">
                     <p class="p2">About Me </i>
