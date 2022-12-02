@@ -92,7 +92,7 @@ ini_set('display_errors', '1');
                 sendEmail("Congrats !", $mail, $name);
                 $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
                 $result = mysqli_query($connexion, $query);
-                header("Refresh:0");
+                // header("Refresh:0");
             } else {
                 echo "Error you have not bought the animal";
             }

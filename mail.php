@@ -27,7 +27,7 @@
         $mail->SMTPSecure = "tls";
         $mail->Port = "587";
         $mail->Username = "contact.apuppies@gmail.com";
-        $mail->Password = "aemlybffsvoqdknh";
+        $mail->Password = "jmwrtoxbrucpllzm";
         $mail->Subject = $subject;
         $mail->setFrom('contact.apuppies@gmail.com');
         $mail->isHTML(true);
