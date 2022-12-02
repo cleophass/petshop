@@ -1,4 +1,3 @@
-/* class title */
 .unset {
 	all: unset;
 }
@@ -9,8 +8,6 @@
 	font-weight: bold;
 	color: #6d6262;
 	padding: 10px;
-	/* centrer au milieu de la page
-     */
 	text-align: center;
 }
 
