@@ -33,38 +33,34 @@
 	color: white;
 	text-decoration: none;
 	font-size: 1.5rem;
+	text-shadow: 0 0 10px #33ffff;
 	
 }
 
 .p1:hover{
 	color: #33ffff;
 	cursor: pointer;
-	border-bottom: 2px solid #33ffff;
+	/* border-bottom: 2px solid #33ffff; */
 }
 
-#item .icon i {
-	font-size: 1.5rem;
-	color: white;
-	padding-right: 30px;
-	font-weight: bolder;
-}
-
-#item .icon i:hover {
-	color: #33ffff;
-	cursor: pointer;
-}
 
 .image {
-	filter: hue-rotate(90deg);
+	/* surbrillance image */
+	/* filter:blur(0.25px); */
+	/* filter: hue-rotate(90deg); */
+	/* creer une subrillance sur l'image */
+	filter: drop-shadow(0 0 0.25rem #33ffff);
 }
 
 .image:hover {
 	filter: invert(100%);
+	filter: drop-shadow(0 0 0.25rem #33ffff);
 }
 
 .logo {
 	scale: 80%;
 	filter: invert(100%);
+	
 }
 
 .logo:hover {
