@@ -41,15 +41,15 @@ ini_set('display_errors', '1');
 
     <h1 class="title2">Refill your e-wallet :</h1>
 
-    <form action="mybalance.php" method="post" class="center">
-
-        <input type="text" name="" placeholder="Card Number" class="fill">
-        <div class="ligne"> <input type="text" name="" placeholder="Expiration date" class="subfill">
-            <div class="space"></div>
-            <input type="text" name="" placeholder="CVV" class="subfill">
+    <form action="mybalance.php" method="post">
+        <div class="center">
+            <input type="text" name="" placeholder="Card Number" class="fill">
+            <div class="ligne"> <input type="text" name="" placeholder="Expiration date" class="subfill">
+                <input type="text" name="" placeholder="CVV" class="subfill">
+            </div>
+            <input type="text" name="amount" placeholder="Amount" class="fill">
+            <input type="submit" name="refill" value="Refill wallet" class="button2">
         </div>
-        <input type="text" name="amount" placeholder="Amount" class="fill">
-        <input type="submit" name="refill" value="Refill wallet" class="button2">
     </form>
 
 
