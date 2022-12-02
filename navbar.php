@@ -15,7 +15,7 @@
     
         <div class="space"></div>
         <ul id="item">
-        <li><a href="mypets.php">
+        <li><a href="mybalance.php">
                     <p class="p1">MyBalance</p>
                 </a></li>
 
