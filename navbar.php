@@ -22,9 +22,7 @@
             <li><a href="sellpet.php">
                     <p class="p1">MySell</p>
                 </a></li>
-            <li><a href="mybalance.php">
-                    <p class="p1">MyBalance</p>
-                </a></li>
+            
 
             <li><a href="mypets.php">
                     <p class="p1">MyPets</p>
@@ -46,10 +44,10 @@
                 <li class=\"hov\"><a  href=\"?logout\"><img src=\"assets/logout.png
                 \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a>
                     <ul class=\"main\">
-                        <li > <a  class=\"title\" >Welcome " . $_SESSION['name'] . "</a></li>
+                       
                         <li> <a href=\"?logout\" class=\"image\">Logout</a></li>
-                        <li> <a href=\"profile.php\" class=\"image\">Profile</a></li>
-                        <li> <a href=\"cart.php\" class=\"image\">Cart</a></li>
+                        <li> <a href=\"mybalance.php\" class=\"image\">MyBalance</a></li>
+                       
                     </ul>
                 </li>";
             } else {
