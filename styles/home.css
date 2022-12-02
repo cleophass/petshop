@@ -1,9 +1,17 @@
 html {
 	scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .header {
 	/* mettre une image en fond */
+
+    background-image: url("../assets/dogpaper.png");
+    background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+    
+	
 	/* position:fixed; */
 
 	padding-top: 80px;
@@ -18,18 +26,35 @@ html {
 	padding-bottom: 25%;
 }
 .header h4 {
+    /* couleur du texte en */
+    color: white;
+    margin: 0;
 	font-size: 3rem;
 	padding-bottom: 15px;
 }
 .header h3 {
+    color: white;
 	padding-bottom: 8px;
 }
+
+.header h2 {
+    color: white;
+	padding-bottom: 8px;
+}
+
+em{
+    color: white;
+
+}
 .header h1 {
-	color: royalblue;
+
+	color: #27CFC8;
 	padding-bottom: 15px;
 }
 
 .header .button {
+    /* mettre en avant */
+    z-index: 1; 
 	padding: 10px 40px;
 	font-size: 1.5rem;
 	cursor: pointer;

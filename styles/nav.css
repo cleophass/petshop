@@ -4,14 +4,15 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: linear-gradient(to bottom, rgb(55, 54, 54), rgb(0, 0, 0));
+	background-color: #003049;
+	/* background: linear-gradient(to bottom, #6C584C, #A98467); */
 	margin-top: -8px;
 	margin-left: -8px;
 	margin-right: -8px;
 }
 
 .nav h2 {
-	color: #fff;
+	color:#ADC178;
 	font-size: 1.7rem;
 }
 
@@ -27,22 +28,15 @@
 	padding-right: 50px;
 }
 
-.p1,
-.p2,
-.p3,
-.p4,
-.p5 {
-	color: whitesmoke;
+.p1{
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
 	text-decoration: none;
 	font-size: 1.5rem;
 	
 }
 
-.p1:hover,
-.p2:hover,
-.p3:hover,
-.p4:hover,
-.p5:hover {
+.p1:hover{
 	color: #33ffff;
 	cursor: pointer;
 	border-bottom: 2px solid #33ffff;
@@ -161,26 +155,36 @@ li {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background: linear-gradient(
-		to bottom,
-		rgb(102, 167, 211),
-		rgb(67, 113, 143)
-	);
+	background-color: #003049;
+	/* degradé */
+
 	margin-top: -8px;
 	margin-left: -8px;
 	margin-right: -8px;
 	max-height: 90vh;
+	/* mettre les elements a gauche */
+	height: 20vh;
+	
 }
 
 .t1 {
-	color: #fff;
-	font-size: 1.7rem;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-weight: bolder;
+	all:unset;
+	/* 
+	/* desatctiver italic */
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+	color: #ffffff;
+	font-size: 2rem;
+	/* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+	/* rajouter effet brillant bleu foncé */
+	text-shadow: 0 0 10px #33ffff;
+	
+	
 }
 
 .t1:hover {
-	color: #3a3a3a;
+	color: #33ffff;
 	cursor: pointer;
 	padding: 0;
 }

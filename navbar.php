@@ -30,7 +30,7 @@
                     <p class="p1">MyPets</p>
                 </a></li>
             <li><a href="#">
-                    <p class="p2">About Me </i>
+                    <p class="p1">About Me </i>
                 </a></li>
             <?php
             if (isset($_GET['logout'])) {

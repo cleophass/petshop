@@ -81,7 +81,7 @@ if (isset($_POST['bought'])) {
     <div class="container">
         <?php
         if ($_SESSION['actual'] == '*') {
-            $sql = "SELECT * FROM pets";
+            $sql = "SELECT * FROM pets where owner = NULL";
         } else {
             $sql = "SELECT * FROM pets where species = '" . $_SESSION['actual'] . "'";
         }
@@ -95,7 +95,9 @@ if (isset($_POST['bought'])) {
 
         <?php foreach ($animals as $animal) : ?>
             <a href="?buy=<?php echo $animal['id']; ?>">
-                <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
+                <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>);background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;">
                     <div class="card__info-hover">
                         <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
 
