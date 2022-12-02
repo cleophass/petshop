@@ -12,6 +12,7 @@
 	font-family: "Roboto Slab", serif;
 	height: 100%;
 	min-height: 90vh;
+	margin: -10px;
 }
 
 .cards {
