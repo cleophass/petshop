@@ -15,11 +15,11 @@ require_once 'db.php';
 ini_set('display_errors', '1');
 ?>
 
-
 <body>
+    <?php require 'navbar.php'; ?>
     <div class="container">
         <?php
-        $sql = 'SELECT * FROM pets where `owner` like ' . $_SESSION['mail'];
+        $sql = "SELECT * from pets where owner like \"" . $_SESSION['mail'] . "\"";
         $result = mysqli_query($connexion, $sql);
         $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         mysqli_free_result($result);
