@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
-    
+
     <link rel="stylesheet" href="styles/nav.css">
     <script src="./animals.js"></script>
 
@@ -17,58 +17,36 @@
 
 <?php
 require_once 'db.php';
-$_SESSION['actual'] ='*';
+$_SESSION['actual'] = '*';
 ini_set('display_errors', '1');
 if (isset($_POST['bought'])) {
     $_SESSION['petId'] = null;
 }
 ?>
 
-
-
 <body>
-<div class="navanimal">
-        
-        <?php
-        
-        ?>
+    <div class="navanimal">
         <ul id="anim">
-        <li><a href="?pressed=<?php echo '*'; ?>#animal_part" >
+            <li><a href="?pressed=<?php echo '*'; ?>#animal_part">
                     <p class="t1">All</p>
-            </a></li>
+                </a></li>
             <?php
-
             $sql = 'SELECT DISTINCT species FROM pets ';
             $list = mysqli_query($connexion, $sql);
-// <option value="' . $data['species'] . '">' . $data['species'] . '</option>
             while ($data = mysqli_fetch_array($list)) {
                 echo '<li><a href="">
                 <a class="t1" href=?pressed=' . $data['species'] . '#animal_part >' . $data['species'] . '</a>
         </a></li>';
             }
             ?>
-            <!-- <li><a href="">
-                    <p class="t1">Dog</p>
-            </a></li>
-            <li><a href="">
-                    <p class="t1">Cat</i>
-            </a></li>
-            <li><a href="">
-                    <p class="t1">Monkey</p>
-            </a></li>
-            <li><a href="">
-                    <p class="t1">Tiger</i>
-            </a></li> -->
-
         </ul>
     </div>
 
     <?php
-     
+
 
     if (isset($_GET['pressed'])) {
         $_SESSION['actual'] = $_GET['pressed'];
-    
     }
     ?>
 
@@ -81,23 +59,23 @@ if (isset($_POST['bought'])) {
     <div class="container">
         <?php
         if ($_SESSION['actual'] == '*') {
-            $sql = "SELECT * FROM pets where owner = NULL";
+            $sql = "SELECT * FROM pets where owner is NULL";
         } else {
-            $sql = "SELECT * FROM pets where species = '" . $_SESSION['actual'] . "'";
+            $sql = "SELECT * FROM pets where species = '" . $_SESSION['actual'] . "' and owner is NULL";
         }
-        
+
         $result = mysqli_query($connexion, $sql);
         $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         mysqli_free_result($result);
         mysqli_close($connexion);
         ?>
-        
+
 
         <?php foreach ($animals as $animal) : ?>
             <a href="?buy=<?php echo $animal['id']; ?>">
-                <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>);background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;">
+                <article class="card card--1" style="
+                background-image:url(<?php echo $animal['photo'] ?>);background-size: cover;
+	background-position: center;background-repeat: no-repeat;">
                     <div class="card__info-hover">
                         <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
 
@@ -124,7 +102,6 @@ if (isset($_POST['bought'])) {
         if (isset($_GET['buy'])) {
             $_SESSION['petId'] = $_GET['buy'];
             $_SESSION['bought'] = false;
-
             echo "<script>location.href='buy.php'</script>";
         }
 
