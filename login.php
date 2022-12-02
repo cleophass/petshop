@@ -13,7 +13,7 @@
 <?php require_once 'db.php'; ?>
 
 <body>
-
+    <?php require 'navbar.php'; ?>
     <div class="container">
         <div class="fixed wid">
             <h2 class="q">Connection to A.P.UPPIES</h2>
@@ -63,7 +63,6 @@
         }
         ?>
     </div>
-
 </body>
 
 </html>

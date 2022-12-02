@@ -55,22 +55,8 @@ if (isset($_POST['bought'])) {
 
 
     <div class="container">
-
-        <select name="species" id="species_id">
-            <option value="all">all</option>
-            <?php
-
-            $sql = 'SELECT DISTINCT species FROM pets ';
-            $list = mysqli_query($connexion, $sql);
-
-            while ($data = mysqli_fetch_array($list)) {
-                echo '<option value="' . $data['species'] . '">' . $data['species'] . '</option>';
-            }
-            ?>
-        </select>
-
         <?php
-        $sql = 'SELECT * FROM pets';
+        $sql = 'SELECT * FROM pets where owner is null';
         $result = mysqli_query($connexion, $sql);
         $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         mysqli_free_result($result);

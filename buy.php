@@ -90,7 +90,8 @@ ini_set('display_errors', '1');
                 $_SESSION['bought'] = true;
                 $_SESSION['animal'] = $animal;
                 sendEmail("Congrats !", $mail, $name);
-                $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
+                // add an owner to the pet
+                $query = "UPDATE pets SET owner = '$mail' WHERE id = " . $_SESSION['petId'];
                 $result = mysqli_query($connexion, $query);
                 // header("Refresh:0");
             } else {
