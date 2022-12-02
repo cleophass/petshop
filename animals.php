@@ -17,6 +17,7 @@
 
 <?php
 require_once 'db.php';
+$_SESSION['actual'] ='*';
 ini_set('display_errors', '1');
 if (isset($_POST['bought'])) {
     $_SESSION['petId'] = null;
@@ -24,15 +25,29 @@ if (isset($_POST['bought'])) {
 ?>
 
 
+
 <body>
 <div class="navanimal">
         
+        <?php
         
+        ?>
         <ul id="anim">
-        <li><a href="">
+        <li><a href="?pressed=<?php echo '*'; ?>#animal_part" >
                     <p class="t1">All</p>
             </a></li>
-            <li><a href="">
+            <?php
+
+            $sql = 'SELECT DISTINCT species FROM pets ';
+            $list = mysqli_query($connexion, $sql);
+// <option value="' . $data['species'] . '">' . $data['species'] . '</option>
+            while ($data = mysqli_fetch_array($list)) {
+                echo '<li><a href="">
+                <a class="t1" href=?pressed=' . $data['species'] . '#animal_part >' . $data['species'] . '</a>
+        </a></li>';
+            }
+            ?>
+            <!-- <li><a href="">
                     <p class="t1">Dog</p>
             </a></li>
             <li><a href="">
@@ -43,10 +58,19 @@ if (isset($_POST['bought'])) {
             </a></li>
             <li><a href="">
                     <p class="t1">Tiger</i>
-            </a></li>
+            </a></li> -->
 
         </ul>
     </div>
+
+    <?php
+     
+
+    if (isset($_GET['pressed'])) {
+        $_SESSION['actual'] = $_GET['pressed'];
+    
+    }
+    ?>
 
 
 
@@ -56,12 +80,18 @@ if (isset($_POST['bought'])) {
 
     <div class="container">
         <?php
-        $sql = 'SELECT * FROM pets where owner is null';
+        if ($_SESSION['actual'] == '*') {
+            $sql = "SELECT * FROM pets";
+        } else {
+            $sql = "SELECT * FROM pets where species = '" . $_SESSION['actual'] . "'";
+        }
+        
         $result = mysqli_query($connexion, $sql);
         $animals = mysqli_fetch_all($result, MYSQLI_ASSOC);
         mysqli_free_result($result);
         mysqli_close($connexion);
         ?>
+        
 
         <?php foreach ($animals as $animal) : ?>
             <a href="?buy=<?php echo $animal['id']; ?>">
@@ -92,8 +122,10 @@ if (isset($_POST['bought'])) {
         if (isset($_GET['buy'])) {
             $_SESSION['petId'] = $_GET['buy'];
             $_SESSION['bought'] = false;
+
             echo "<script>location.href='buy.php'</script>";
         }
+
         ?>
     </div>
 </body>
