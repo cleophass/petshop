@@ -41,21 +41,11 @@ if (isset($_POST['bought'])) {
             ?>
         </ul>
     </div>
-
     <?php
-
-
     if (isset($_GET['pressed'])) {
         $_SESSION['actual'] = $_GET['pressed'];
     }
     ?>
-
-
-
-
-
-
-
     <div class="container">
         <?php
         if ($_SESSION['actual'] == '*') {
@@ -69,8 +59,6 @@ if (isset($_POST['bought'])) {
         mysqli_free_result($result);
         mysqli_close($connexion);
         ?>
-
-
         <?php foreach ($animals as $animal) : ?>
             <a href="?buy=<?php echo $animal['id']; ?>">
                 <article class="card card--1" style="
@@ -104,7 +92,6 @@ if (isset($_POST['bought'])) {
             $_SESSION['bought'] = false;
             echo "<script>location.href='buy.php'</script>";
         }
-
         ?>
     </div>
 </body>
