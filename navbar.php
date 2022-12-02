@@ -30,12 +30,27 @@
 
             if (isset($_SESSION['name'])) {
                 echo "
-                <li><a  href=\"?logout\"><img src=\"assets/logout.png
-                \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
+                
+                <li class=\"hov\"><a  href=\"?logout\"><img src=\"assets/logout.png
+                \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a>
+                    <ul class=\"main\">
+                        <li > <a  class=\"title\" >Welcome " . $_SESSION['name'] . "</a></li>
+                        <li> <a href=\"?logout\" class=\"image\">Logout</a></li>
+                        <li> <a href=\"profile.php\" class=\"image\">Profile</a></li>
+                        <li> <a href=\"cart.php\" class=\"image\">Cart</a></li>
+                    </ul>
+                </li>";
             } else {
                 echo "
-                <li><a href=\"login.php\"><img \"image\" src=\"assets/login.png
-                \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a></li>";
+                <li class=\"hov\"><a ><img \"image\" src=\"assets/login.png
+                \" alt=\"logo\" height=\"50px\" width=\"50px\" class=\"image\"></a>
+                    <ul class=\"main\">
+                        
+                        <li> <a href=\"login.php\" class=\"image\">Login</a></li>
+                        <li> <a href=\"registration.php\" class=\"image\">Register</a></li>
+                        
+                    </ul>
+                </li>";
             }
             ?>
 
