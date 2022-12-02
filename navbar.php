@@ -18,7 +18,7 @@
 
         <div class="space"></div>
         <ul id="item">
-        <li>
+            <li>
             <li><a href="sellpet.php">
                     <p class="p1">MySell</p>
                 </a></li>
@@ -29,8 +29,8 @@
             <li><a href="mypets.php">
                     <p class="p1">MyPets</p>
                 </a></li>
-            <li><a href="#">
-                    <p class="p2">About Me </i>
+            <li><a href="aboutus.php">
+                    <p class="p2">About Us</i>
                 </a></li>
             <?php
             if (isset($_GET['logout'])) {

@@ -16,7 +16,11 @@ ini_set('display_errors', '1');
 ?>
 
 <body>
-    <?php require 'navbar.php'; ?>
+    <?php require 'navbar.php';
+    if (!isset($_SESSION['name'])) {
+        header('Location: login.php');
+    }
+    ?>
     <div class="container">
         <?php
         $sql = "SELECT * from pets where owner like \"" . $_SESSION['mail'] . "\"";
@@ -29,10 +33,8 @@ ini_set('display_errors', '1');
             <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
                 <div class="card__info-hover">
                     <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
-
                     <div class="card__clock-info">
                         <span class="card__time" viewBox="0 0 24 24"><?php echo $animal['weight'] ?> kg</span>
-
                         <span class="card__time"><?php echo $animal['race'] ?></span>
                     </div>
                 </div>
