@@ -14,6 +14,9 @@
         <img src="assets/logo.png" alt="logo" height="100px" width="100px" class="logo">
         <div class="space"></div>
         <ul id="item">
+            <li><a href="mypets.php">
+                    <p class="p1">MyPets</p>
+                </a></li>
             <li><a href="index.php">
                     <p class="p1">Home Page </p>
                 </a></li>
