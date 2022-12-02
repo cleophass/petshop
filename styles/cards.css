@@ -18,6 +18,14 @@
 	margin: -10px;
 }
 
+.plus{
+	background-image: url("../assets/motif4.png");
+	/* overflow x hidden */
+
+	}
+
+
+
 .cards {
 	width: 100%;
 	display: flex;

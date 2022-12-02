@@ -2,6 +2,15 @@ html {
 	overflow: hidden;
 }
 
+body{
+    
+    /* mettre une image en background */
+    background-image: url("../assets/motif2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
 .title1 {
 	padding-top: 3vh;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;

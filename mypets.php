@@ -21,7 +21,7 @@ ini_set('display_errors', '1');
         header('Location: login.php');
     }
     ?>
-    <div class="container">
+    <div class="container plus">
         <?php
         $sql = "SELECT * from pets where owner like \"" . $_SESSION['mail'] . "\"";
         $result = mysqli_query($connexion, $sql);
