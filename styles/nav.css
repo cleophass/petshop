@@ -5,14 +5,13 @@
 	justify-content: space-between;
 	align-items: center;
 	background-color: #003049;
-	/* background: linear-gradient(to bottom, #6C584C, #A98467); */
 	margin-top: -8px;
 	margin-left: -8px;
 	margin-right: -8px;
 }
 
 .nav h2 {
-	color:#ADC178;
+	color: #adc178;
 	font-size: 1.7rem;
 }
 
@@ -28,27 +27,19 @@
 	padding-right: 50px;
 }
 
-.p1{
-	font-family:Verdana, Geneva, Tahoma, sans-serif;
+.p1 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: white;
 	text-decoration: none;
 	font-size: 1.5rem;
-	/* text-shadow: 0 0 10px #33ffff; */
-	
 }
 
-.p1:hover{
+.p1:hover {
 	color: #33ffff;
 	cursor: pointer;
-	/* border-bottom: 2px solid #33ffff; */
 }
 
-
 .image {
-	/* surbrillance image */
-	/* filter:blur(0.25px); */
-	/* filter: hue-rotate(90deg); */
-	/* creer une subrillance sur l'image */
 	filter: drop-shadow(0 0 0.25rem #33ffff);
 }
 
@@ -60,7 +51,6 @@
 .logo {
 	scale: 80%;
 	filter: invert(100%);
-	
 }
 
 .logo:hover {
@@ -73,21 +63,16 @@ li {
 	padding: 0;
 }
 .main {
-	/* descendre la div */
 	position: absolute;
-	margin-top: 5vh;
-
+	margin-top: 20%;
 	z-index: 1;
-	scale: 200%	;
+	scale: 200%;
 }
 .main li {
 	list-style: none;
 	background-color: #003049;
-
-	
 	width: 100px;
 	padding: 0 5px;
-	/* border: 1px solid black; */
 	height: 30px;
 	line-height: 30px;
 	transition: all 0.5s ease-in-out;
@@ -117,11 +102,7 @@ li {
 }
 
 .hov:hover li:last-child {
-	
-	
-	/* border radius bottom left */
 	border-bottom-left-radius: 10px;
-	/* border radius bottom right */
 	border-bottom-right-radius: 10px;
 }
 
@@ -167,31 +148,18 @@ li {
 	justify-content: space-between;
 	align-items: center;
 	background-color: #003049;
-	/* degradé */
-
 	margin-top: -8px;
 	margin-left: -8px;
 	margin-right: -8px;
 	max-height: 90vh;
-	/* mettre les elements a gauche */
 	height: 20vh;
-	
 }
 
 .t1 {
-	all:unset;
-	/* 
-	/* desatctiver italic */
-	font-family:Verdana, Geneva, Tahoma, sans-serif;
-
-
+	all: unset;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: #ffffff;
 	font-size: 2rem;
-	/* font-family:Verdana, Geneva, Tahoma, sans-serif; */
-	/* rajouter effet brillant bleu foncé */
-	
-	
-	
 }
 
 .t1:hover {

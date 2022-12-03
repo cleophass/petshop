@@ -1,21 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-* {
+article * {
 	box-sizing: border-box;
 }
 
 .container {
-	/* mettre une image en background */
-
 	background-image: url("../assets/pattern.png");
-	
 	display: flex;
 	flex-wrap: wrap;
 	font-family: "Roboto Slab", serif;
 	height: 100%;
 	min-height: 90vh;
-	margin: -10px;
 }
 
 .plus{
@@ -34,7 +30,6 @@
 	-webkit-justify-content: center;
 	max-width: 820px;
 	margin-bottom: 10%;
-	/* brillance bleu */
 }
 
 .card__like {
@@ -153,5 +148,3 @@
 .card:hover .card__info-hover {
 	opacity: 1;
 }
-
-
