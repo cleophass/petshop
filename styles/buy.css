@@ -1,0 +1,13 @@
+.titre{
+    font-size: 50px;
+    font-weight: bold;
+    color: green;
+
+    margin-bottom: 10px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+
+.newbut{
+    all: unset;
+}

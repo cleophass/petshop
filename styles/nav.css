@@ -33,7 +33,7 @@
 	color: white;
 	text-decoration: none;
 	font-size: 1.5rem;
-	text-shadow: 0 0 10px #33ffff;
+	/* text-shadow: 0 0 10px #33ffff; */
 	
 }
 
@@ -189,7 +189,7 @@ li {
 	font-size: 2rem;
 	/* font-family:Verdana, Geneva, Tahoma, sans-serif; */
 	/* rajouter effet brillant bleu foncé */
-	text-shadow: 0 0 10px #33ffff;
+	
 	
 	
 }

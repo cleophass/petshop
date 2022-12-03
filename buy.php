@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/buy.css">
+
 
     <title>Document</title>
 </head>
@@ -18,7 +20,8 @@ ini_set('display_errors', '1');
 
 <body>
     <?php require 'navbar.php'; ?>
-    <h1>Buy a new animal</h1>
+    <h1 class="titre">Buy a new animal</h1>
+    <div class="pic">   
     <?php
     $sql = "SELECT * FROM pets where id = " . $_SESSION['petId'];
     $result = mysqli_query($connexion, $sql);
@@ -47,13 +50,14 @@ ini_set('display_errors', '1');
                     card__author" title="author"><?php echo $animal['sexe'] ?></a></span>
         </div>
     </article>
+    </div>
     <?php
     if (!isset($_SESSION['name'])) {
         echo "
     <a href='connection.php'>Please connect to your website to purchase a pet 🤭</a>
     ";
     } else {
-        echo "Welcome " . $_SESSION["name"];
+        
         $mail = $_SESSION['mail'];
         $name = $_SESSION['name'];
     }
@@ -62,8 +66,8 @@ ini_set('display_errors', '1');
         echo "<br>Check your mails 🤭❗";
     } else {
         echo
-        "<form method=\"post\" style=\"display: flex; flex-direction: column; width: 30%\">
-        <input type=\"submit\" name=\"buy\" value=\"BUY\">
+        "<form method=\"post\" style=\"display: flex; flex-direction: column; width: 30%\" class=\"newbut\">
+        <input type=\"submit\" name=\"buy\" value=\"BUY\" >
     </form>";
     }
     ?>
