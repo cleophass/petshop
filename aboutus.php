@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 
+<?php
+require_once 'db.php';
+?>
+
 <body>
     <?php require 'navbar.php'; ?>
     <div class="container">
