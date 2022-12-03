@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
+
 </head>
 
 <?php
@@ -15,7 +16,7 @@ require_once 'db.php';
 ini_set('display_errors', '1');
 ?>
 
-<body>
+<body style="overflow-x:hidden">
     <?php require 'navbar.php';
     if (!isset($_SESSION['name'])) {
         header('Location: login.php');
