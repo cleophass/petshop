@@ -21,10 +21,7 @@ require_once 'db.php';
     <?php require 'navbar.php'; ?>
     <div class="container">
         <h1>Who we are </h1>
-        <p class="paragraph"> We are a group of students from the Uni
-            versity of the Philippines Diliman. We are curr
-            ently taking the subject Web Programming. This web
-            ite is our final project for the subject. </p>
+        <p class="paragraph"> We are a group of students from the A.P.U (Asian Pacific Univesity), from Malaysia. We are currently taking the subject Web Programming. This website is our final project for the subject. </p>
         <div class="team">
             <h1>Our Team </h1>
             
@@ -36,15 +33,14 @@ require_once 'db.php';
         </div>
         <div class="who">
             <h1>The idea behind this project</h1>
-            <p> This project is a website that allows users to buy and sell pets. It has a
-                n admin panel that allows admins to manage the website. </p>
+            <p> This project is a website that allows users to buy and sell pets. The idea and realized a community site indeed the animals will be sold and bought by the users. we are only there to make the link between the seller and the buyer. this allows us to facilitate the task. moreover it allows to regularize the traffic of animals.</p>
             <h3 class="sub">Our Mission</h3>
             <p> Our mission is to make buying and selling pets easier for everyone. </p>
             <h3 class="sub">Our Vision</h3>
-            <p> We want to make this website the number one website for buying and selling pets. </p>
+            <p> We want to make this website the number one website for buying and selling pets. we want to give abandoned animals a new home. moreover, we want to find customers who correspond to the animals we offer</p>
             <h3 class="sub" >Our Values</h3>
             <p> Our values are to make this website a safe and secure place for everyone. We
-                want to make sure that everyone who uses this website is safe and secure. </p>
+                want to make sure that everyone who uses this website is safe and secure. To avoid too many animals being abandoned. indeed no animals on our site will come from breeding. In France we have an association called SPA which helps find a new home for abandoned animals. Our goal is to digitize that. this is where ApuPpies comes in. we allow the user to offer his pets in exchange for compensation or to consult the different abandoned animals and find the one we like.</p>
         </div>
     </div>
 </body>
