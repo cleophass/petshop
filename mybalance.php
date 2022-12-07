@@ -32,7 +32,7 @@ ini_set('display_errors', '1');
         $result = mysqli_query($connexion, $query);
         $row = mysqli_fetch_assoc($result);
         $balance = $row['balance'];
-        echo "<h1 class=balance>" . $balance . "$</h1>";
+        echo "<h1 class=balance>" . $balance . "€</h1>";
     } else {
         echo "<a href=\"login.php\"><h1 class=\"title1\">You are not logged in!</h1></a>";
     }

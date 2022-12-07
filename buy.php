@@ -16,7 +16,7 @@ require_once 'db.php';
 ini_set('display_errors', '1');
 ?>
 
-<body>
+<body style="overflow-y:hidden" >
     <?php require 'navbar.php'; ?>
     <div class="container">
         <h1 class="titre">Buy a new animal</h1>
@@ -93,7 +93,7 @@ ini_set('display_errors', '1');
                     sendEmail("Congrats !", $mail, $name);
                     $query = "UPDATE pets SET owner = '$mail' WHERE id = " . $_SESSION['petId'];
                     $result = mysqli_query($connexion, $query);
-                    header("Refresh:0");
+                    // header("Refresh:0");
                 } else {
                     echo "Error you have not bought the animal";
                 }
