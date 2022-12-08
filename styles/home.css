@@ -4,12 +4,12 @@ html {
 }
 
 .header {
-	background-image: url("../assets/dogpaper.png");
+	background-image: url("../assets/dogpaper1.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	padding-top: 80px;
-	padding-left: 120px;
+	/* padding-top: 80px; */
+	
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
@@ -18,6 +18,12 @@ html {
 	margin-right: -8px;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	padding-bottom: 25%;
+	margin-top:-8px;
+}
+
+#header{
+	padding-top: 10vh;;
+	padding-left: 120px;
 }
 .header h4 {
 	color: white;
@@ -55,8 +61,8 @@ em {
 	overflow: hidden;
 	color: #fff;
 	border-radius: 30px;
-	box-shadow: 0px -0px 0px 0px rgba(143, 64, 248, 0.5),
-		0px 0px 0px 0px rgba(39, 200, 255, 0.5);
+	box-shadow: 0px -0px 0px 0px rgb(255, 51, 0),
+		0px 0px 0px 0px rgb(246, 255, 0);
 	transition: 0.5s;
 }
 
@@ -69,9 +75,9 @@ em {
 	left: -100px;
 	background-image: linear-gradient(
 		225deg,
-		#27d86c 0%,
-		#26caf8 50%,
-		#c625d0 100%
+		#d82727 0%,
+		#ff9100 50%,
+		#ff0000 100%
 	);
 	z-index: -1;
 	transition: all 30s;
@@ -79,29 +85,7 @@ em {
 
 .button:hover {
 	transform: translate(0, -6px);
-	box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, 0.25),
-		-10px 10px 25px 0px rgba(39, 200, 255, 0.25);
+	box-shadow: 10px -10px 25px 0px rgb(255, 159, 142),
+		-10px 10px 25px 0px rgb(39, 201, 255);
 }
 
-.button::after {
-	content: "";
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	top: -90px;
-	left: -100px;
-	background-image: linear-gradient(
-		225deg,
-		#27d86c 0%,
-		#26caf8 50%,
-		#c625d0 100%
-	);
-	z-index: -1;
-	transition: all 30s;
-}
-
-.button:hover {
-	transform: translate(0, -6px);
-	box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, 0.25),
-		-10px 10px 25px 0px rgba(39, 200, 255, 0.25);
-}

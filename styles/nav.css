@@ -8,6 +8,8 @@
 	margin-top: -8px;
 	margin-left: -8px;
 	margin-right: -8px;
+	/* no background */
+
 }
 
 .nav h2 {
@@ -67,6 +69,8 @@ li {
 	margin-top: 20%;
 	z-index: 1;
 	scale: 200%;
+	/* decaler a droite */
+	margin-left: 14%;
 }
 .main li {
 	list-style: none;
@@ -76,6 +80,7 @@ li {
 	height: 30px;
 	line-height: 30px;
 	transition: all 0.5s ease-in-out;
+	
 }
 
 .main li:nth-child(odd) {
