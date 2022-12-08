@@ -3,6 +3,16 @@
 	all: unset;
 }
 
+body{
+	
+    
+    /* mettre une image en background */
+    background-image: url("../assets/motif2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
 .title {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 40px;
@@ -74,6 +84,7 @@
 	font-size: 1rem;
 	outline: none;
 	border-color: rgb(0, 0, 0);
+	background-color: white;
 	text-align: center;
 	width: 97.5%;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -146,3 +157,6 @@
 .bonus {
 	align-items: center;
 }
+
+
+

@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/cards.css">
+
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <?php
@@ -15,9 +16,13 @@ require_once 'db.php';
 ini_set('display_errors', '1');
 ?>
 
-<body>
-    <?php require 'navbar.php'; ?>
-    <div class="container">
+<body style="overflow-x:hidden">
+    <?php require 'navbar.php';
+    if (!isset($_SESSION['name'])) {
+        header('Location: login.php');
+    }
+    ?>
+    <div class="container plus">
         <?php
         $sql = "SELECT * from pets where owner like \"" . $_SESSION['mail'] . "\"";
         $result = mysqli_query($connexion, $sql);
@@ -29,10 +34,8 @@ ini_set('display_errors', '1');
             <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
                 <div class="card__info-hover">
                     <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
-
                     <div class="card__clock-info">
                         <span class="card__time" viewBox="0 0 24 24"><?php echo $animal['weight'] ?> kg</span>
-
                         <span class="card__time"><?php echo $animal['race'] ?></span>
                     </div>
                 </div>

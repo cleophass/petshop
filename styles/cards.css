@@ -1,19 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-* {
+article * {
 	box-sizing: border-box;
 }
 
 .container {
-	background-color: #d2dbdd;
+	background-image: url("../assets/pattern.png");
 	display: flex;
 	flex-wrap: wrap;
 	font-family: "Roboto Slab", serif;
 	height: 100%;
 	min-height: 90vh;
-	margin: -10px;
 }
+
+.plus{
+	background-image: url("../assets/motiflittle.png");
+	/* overflow x hidden */
+
+	}
+
+
 
 .cards {
 	width: 100%;
@@ -113,7 +120,7 @@
 	margin-top: 5px;
 	margin-bottom: 10px;
 	font-family: "Roboto Slab", serif;
-	color: #ad7d52;
+	color: grey;
 }
 
 .card__by {
@@ -125,7 +132,7 @@
 .card__author {
 	font-weight: 600;
 	text-decoration: none;
-	color: #ad7d52;
+	color: grey;
 }
 
 .card:hover .card__img--hover {
