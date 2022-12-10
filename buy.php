@@ -16,7 +16,7 @@ require_once 'db.php';
 ini_set('display_errors', '1');
 ?>
 
-<body style="overflow-y:hidden" >
+<body style="overflow-y:hidden">
     <?php require 'navbar.php'; ?>
     <div class="container">
         <h1 class="titre">Buy a new animal</h1>
@@ -57,9 +57,15 @@ ini_set('display_errors', '1');
     <a href='connection.php'>Please connect to your website to purchase a pet 🤭</a>
     ";
             } else {
-
                 $mail = $_SESSION['mail'];
                 $name = $_SESSION['name'];
+                if ($mail == 'admin@apuppies.com') {
+                    echo
+                    "<form method=\"post\" style=\"display: flex; flex-direction: column; width: 30%\" class=\"newbut\">
+                        <input class=\"buy red\"
+                         type=\"submit\" name=\"delete\" value=\"Delete\" >
+                    </form>";
+                }
             }
             if ($_SESSION['bought']) {
                 echo "<br>Congrats! You have bought " . $animal['name'] . ' 🎉';
@@ -99,6 +105,15 @@ ini_set('display_errors', '1');
                 }
             } else {
                 echo "<br>You don't have enough money to buy this animal";
+            }
+        }
+        if (isset($_POST['delete'])) {
+            $query = "DELETE FROM pets WHERE id = " . $_SESSION['petId'];
+            $result = mysqli_query($connexion, $query);
+            if ($result) {
+                echo "<script>location.href='index.php'</script>";
+            } else {
+                echo "Error you have not deleted the animal";
             }
         }
         ?>

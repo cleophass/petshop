@@ -40,6 +40,11 @@
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+.buy.red {
+	background-color: red;
+	border-color: red;
+}
+
 .buy:hover {
 	transform: scale(1.5);
 	transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
