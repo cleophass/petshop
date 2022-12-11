@@ -23,8 +23,6 @@
             flex-direction: column;
             width: 30%;">
                 <div class="form_group">
-
-
                     <input class="input" type="text" name="mail" placeholder="eMail">
                 </div>
                 <div class="form_group">
@@ -33,9 +31,6 @@
                 <div class="form_group">
                     <input class="input" type="text" name="password" placeholder="Password">
                 </div>
-
-
-
                 <input class="border moved2 unset" type="submit" name="submit" value="Login">
             </form>
 
@@ -48,9 +43,7 @@
         if (isset($_POST['submit'])) {
             $mail = $_POST['mail'];
             $password = md5($_POST['password']);
-
             $query = "SELECT * FROM account WHERE password = '$password' AND mail = '$mail'";
-
             $result = mysqli_query($connexion, $query);
             if (mysqli_num_rows($result) > 0) {
                 $_SESSION['mail'] = $mail;
