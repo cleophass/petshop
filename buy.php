@@ -31,8 +31,10 @@ ini_set('display_errors', '1');
                 }
                 mysqli_free_result($result);
                 ?>
-                <article class="card card--1" style="background-image:url(<?php echo $animal['photo'] ?>">
-                    <div class="card__info-hover">
+                <article class="card card--1" style="
+            background-image:url(<?php echo $animal['photo'] ?>);background-size: cover;
+	background-position: center;background-repeat: no-repeat;">
+                <div class="card__info-hover">
                         <span class="card__category" viewBox="0 0 24 24"><?php echo $animal['age'] ?>years old</span>
                         <div class="card__clock-info">
                             <span class="card__time" viewBox="0 0 24 24"><?php echo $animal['weight'] ?> kg</span>
@@ -59,7 +61,7 @@ ini_set('display_errors', '1');
             } else {
                 $mail = $_SESSION['mail'];
                 $name = $_SESSION['name'];
-                if ($mail == 'admin@apuppies.com') {
+                if ($mail == 'ADMIN@APUPPIES.COM') {
                     echo
                     "<form method=\"post\" style=\"display: flex; flex-direction: column; width: 30%\" class=\"newbut\">
                         <input class=\"buy red\"
